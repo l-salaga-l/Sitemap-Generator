@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- view.fxml -->
+
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="org.example.sitemapgenerator.controller.CrawlController">
+
+    <HBox alignment="CENTER" spacing="10">
+        <Label text="URL:" />
+        <TextField fx:id="urlInputField" prefWidth="400" promptText="https://example.com" />
+
+        <Button fx:id="startButton" onAction="#handleStartCrawling" text="Старт" />
+        <Button fx:id="stopButton" onAction="#handleStopCrawling" text="Стоп" />
+    </HBox>
+
+    <HBox alignment="BOTTOM_LEFT" spacing="10">
+        <Label text="Глубина:" />
+        <Spinner fx:id="depthSpinner" prefWidth="80" />
+    </HBox>
+
+    <HBox alignment="CENTER" spacing="20">
+        <VBox alignment="CENTER">
+            <Label fx:id="discoveredLabel" style="-fx-font-size: 18px;" text="0" />
+            <Label style="-fx-font-size: 14px;" text="Найдено URL" />
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label fx:id="processedLabel" style="-fx-font-size: 18px;" text="0" />
+            <Label style="-fx-font-size: 14px;" text="Обработано страниц" />
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label fx:id="queuedUrlsLabel" style="-fx-font-size: 18px;" text="0" />
+            <Label style="-fx-font-size: 14px;" text="В очереди" />
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label fx:id="errorCountLabel" style="-fx-font-size: 18px;" text="0" />
+            <Label style="-fx-font-size: 14px;" text="Ошибки" />
+        </VBox>
+    </HBox>
+
+    <HBox alignment="BOTTOM_LEFT" spacing="10">
+        <Button onAction="#handleChooseDirectory" text="Папка..." />
+        <TextField fx:id="directoryPathField" prefWidth="250" promptText="Текущая директория" />
+    </HBox>
+</VBox>
